@@ -2,9 +2,9 @@
 
 export interface RepositoryUserCount {
 
-  // addToInventory( product: Product ): Promise<Product>;
+  addToInventory( product: any ): any;
 
-  listed();
+  listedInventory(): any;
 
   // updateStateCash( product: Product ): Promise<Product>;
 }
