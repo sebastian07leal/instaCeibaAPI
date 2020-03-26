@@ -2,8 +2,8 @@ import { Product } from '../products/product';
 
 export class UserCount {
 
-  private _cash: number;
   private _nameUser: string;
+  private _cash: number;
   private _productUse?: Product[];
 
   constructor(cash: number, name: string, products: Product[]) {

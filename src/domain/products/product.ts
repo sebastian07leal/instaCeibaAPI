@@ -1,8 +1,8 @@
 export class Product {
 
-  private _urlImage: string;
   private _name: string;
   private _coste: number;
+  private _urlImage: string;
 
   constructor(urlImage: string, name: string, coste: number) {
     this._urlImage = urlImage;

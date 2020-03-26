@@ -1,11 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ProductModule } from './products/product.module';
-import { UserCountModule } from './userCount/userCount.module';
+import { RepositoryUserCount } from './userCount/ports/repository.userCount';
 
 @Module({
-  imports: [
-    ProductModule,
-    UserCountModule,
-  ],
+
 })
 export default class DomainModule {}

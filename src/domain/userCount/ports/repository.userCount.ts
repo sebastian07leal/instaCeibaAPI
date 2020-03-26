@@ -1,8 +1,10 @@
-import { Product } from '../../products/product';
+// import { Product } from '../../products/product';
 
-export abstract class RepositoryUserCount {
+export interface RepositoryUserCount {
 
-  abstract async addToInventory( producto: Product ): Promise<boolean>;
-  abstract async listed(): Promise<Product[]>; 
-  
+  // addToInventory( product: Product ): Promise<Product>;
+
+  listed();
+
+  // updateStateCash( product: Product ): Promise<Product>;
 }

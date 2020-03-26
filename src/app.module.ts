@@ -1,9 +1,44 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { ProductosControlador } from './infrastructure/productos/productos.controlador';
+import { Module, DynamicModule } from '@nestjs/common';
+import InflastructureModule from './infrastructure/inflastructure.module';
 
-@Module({
-  imports: [],
-  controllers: [AppController, ProductosControlador ],
-})
-export class AppModule {}
+
+// import { AplicationModule } from './application/aplication.module';
+// import DomainModule from './domain/domain.module';
+
+
+
+// import { RepositoryModule } from './infrastructure/repository/repository.module';
+
+// @Module({})
+// export class AppModule {
+
+//   static foorRoot(): DynamicModule {
+//     return {
+//       module: AppModule,
+//       imports: [
+//         DomainModule,
+//         AplicationModule,
+//         InflastructureModule.foorRoot() 
+//       ],
+//     }
+//   }
+// }
+
+
+import { testService } from './infrastructure/controllers/test.service';
+
+@Module({})
+export class AppModule {
+
+  static foorRoot(): DynamicModule {
+    return {
+      module: AppModule,
+      imports: [
+        InflastructureModule.foorRoot(),
+      ],
+      providers: [
+        testService
+      ]
+    }
+  }
+}
