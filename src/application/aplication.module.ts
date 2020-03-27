@@ -6,7 +6,7 @@ import { AddInventory } from './userCount/useCase/addInventory';
 import { UserCountMongo } from 'src/infrastructure/repository/service/userCount.mongo';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserCountSchema } from '../infrastructure/repository/shema/userCountSchema';
-
+import { UserHandle } from './handle/userHandle';
 
 @Module({
   imports: [
@@ -21,6 +21,7 @@ import { UserCountSchema } from '../infrastructure/repository/shema/userCountSch
   providers: [
     RepositoryModule,
     Listed,
+    UserHandle,
     AddInventory,
       {
           provide: 'UserCountMongo',
@@ -29,6 +30,7 @@ import { UserCountSchema } from '../infrastructure/repository/shema/userCountSch
   ]
   ,
   exports: [
+    UserHandle,
     Listed,
     AddInventory,
   ]

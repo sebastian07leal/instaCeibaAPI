@@ -1,8 +1,8 @@
-// import { Product } from '../../products/product';
+import { UserCount } from '../../userCount/userCount';
 
 export interface RepositoryUserCount {
 
-  addToInventory( product: any ): any;
+  addToInventory( product: UserCount ): Promise<any>;
 
   listedInventory(): any;
 

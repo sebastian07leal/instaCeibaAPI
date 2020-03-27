@@ -2,26 +2,26 @@ import { Product } from '../products/product';
 
 export class UserCount {
 
-  private _nameUser: string;
-  private _cash: number;
-  private _productUse?: Product[];
+  private name: string;
+  private cash: number;
+  private productUse?: Product[];
 
-  constructor(cash: number, name: string, products: Product[]) {
-    this._cash = cash;
-    this._nameUser = name;
-    this._productUse = products;
+  constructor(_cash: number, _name: string, _products: Product[]) {
+    this.cash = _cash;
+    this.name = _name;
+    this.productUse = _products;
   }
 
   getCash(): number {
-    return this._cash;
+    return this.cash;
   }
 
   getNameUser(): string {
-    return this._nameUser;
+    return this.name;
   }
 
   getProducUser(): Product[] {
-    return this._productUse;
+    return this.productUse;
   }
 
 }

@@ -3,21 +3,27 @@ import {
 } from '@nestjs/common';
 
 import { Listed } from 'src/application/userCount/useCase/listed';
+import { AddInventory } from 'src/application/userCount/useCase/addInventory';
+import { UserCommand } from 'src/application/command/user.command';
+import { async } from 'rxjs/internal/scheduler/async';
 
+@Controller('usercount/')
+export class UserController {
 
-@Controller('product/')
-export class ProductController {
+  constructor(
+    private getAllUser: Listed,
+    private createUser: AddInventory
+    ) {}
 
-  constructor(private ref: Listed) {}
 
   @Get()
   getInventory(): any {
-    return this.ref.getAll();
+    return this.getAllUser.getAll();
   }
 
   @Post()
-  createCosito(product: any): any {
-    return this.ref.createListed(product);
+  async createUserCount(@Body() userCount: UserCommand): Promise<any> {
+    return await this.createUser.handle(userCount);
   }
 
 

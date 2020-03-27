@@ -1,12 +1,8 @@
 import { Module, DynamicModule } from '@nestjs/common';
 
-import InflastructureModule from './infrastructure/inflastructure.module';
-
-
-import { AplicationModule } from './application/aplication.module';
 import DomainModule from './domain/domain.module';
-
-// import { RepositoryModule } from './infrastructure/repository/repository.module';
+import { AplicationModule } from './application/aplication.module';
+import InflastructureModule from './infrastructure/inflastructure.module';
 
 @Module({})
 export class AppModule {
