@@ -8,11 +8,11 @@ export class AddInventory {
 
     constructor(
       @Inject('UserCountMongo') private repository: UserCountMongo,
-      private UserHandle: UserHandle
+      private userHandle: UserHandle
     ){}
 
     public async handle(user: UserCommand): Promise<any> {
-        const responceObject = this.UserHandle.createProduct(user);
+        const responceObject = this.userHandle.createProduct(user);
       return await this.repository.addToInventory(responceObject); 
     }
  

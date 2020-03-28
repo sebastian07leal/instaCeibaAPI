@@ -4,7 +4,8 @@ export interface RepositoryUserCount {
 
   addToInventory( product: UserCount ): Promise<any>;
 
-  listedInventory(): any;
+  listedInventory(): Promise<any>;
 
-  // updateStateCash( product: Product ): Promise<Product>;
+  deleteUserInventory(idUser: string): Promise<any>;
+
 }

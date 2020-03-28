@@ -5,11 +5,11 @@ import { UserCountMongo } from 'src/infrastructure/repository/service/userCount.
 export class Listed {
 
   constructor(
-    @Inject('UserCountMongo') private  ref: UserCountMongo
+    @Inject('UserCountMongo') private  repository: UserCountMongo
   ){}
 
-  getAll() {
-    return this.ref.listedInventory();
+  public async listedUser(): Promise<any> {
+    return await this.repository.listedInventory();
   }
 
 

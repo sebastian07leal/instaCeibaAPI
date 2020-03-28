@@ -12,16 +12,4 @@ export class UserCount {
     this.productUse = _products;
   }
 
-  getCash(): number {
-    return this.cash;
-  }
-
-  getNameUser(): string {
-    return this.name;
-  }
-
-  getProducUser(): Product[] {
-    return this.productUse;
-  }
-
 }

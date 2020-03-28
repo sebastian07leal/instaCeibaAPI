@@ -12,7 +12,7 @@ export class UserCountMongo implements RepositoryUserCount {
     @InjectModel('UserCount') private readonly userCount: Model<UserCountEntity>
   ){}
 
-    listedInventory(): any {
+    async listedInventory(): Promise<any> {
       return this.userCount.find();
     }
 
@@ -20,6 +20,10 @@ export class UserCountMongo implements RepositoryUserCount {
       const producCreate = new this.userCount(user);
       return await producCreate.save();
     }
+
+    async deleteUserInventory(id: string): Promise<any> {
+      return await this.userCount.findByIdAndDelete(id);
+    } 
 
 
 }
