@@ -1,7 +1,8 @@
 import { Schema } from 'mongoose';
 
 export const UserCountSchema = new Schema({
-  name: String,
-  cash: Number,
-  productUser: [],
+  title: String,
+  likes: Number,
+  comment: Array,
+  url: String,
 });

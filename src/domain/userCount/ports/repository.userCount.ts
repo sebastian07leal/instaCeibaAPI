@@ -8,4 +8,6 @@ export interface RepositoryUserCount {
 
   deleteUserInventory(idUser: string): Promise<any>;
 
+  putUserInventory(idUserCount: string, count: UserCount): Promise<any>;
+
 }

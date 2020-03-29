@@ -7,9 +7,10 @@ export class UserHandle {
 
   public createProduct(productCommand: UserCommand): UserCount{
     return new UserCount(
-      productCommand.cash,
-      productCommand.name,
-      productCommand.inventary
+      productCommand.likes,
+      productCommand.title,
+      productCommand.comment,
+      productCommand.url,
     )
   }
 

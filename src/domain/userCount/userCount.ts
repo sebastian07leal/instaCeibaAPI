@@ -2,14 +2,16 @@ import { Product } from '../products/product';
 
 export class UserCount {
 
-  private name: string;
-  private cash: number;
-  private productUse?: Product[];
+  private title: string;
+  private likes: number;
+  private comment:  Array<string>;
+  private url: string
 
-  constructor(_cash: number, _name: string, _products: Product[]) {
-    this.cash = _cash;
-    this.name = _name;
-    this.productUse = _products;
+  constructor(_likes: number, _title: string, _comments: Array<string>, _url: string) {
+    this.likes = _likes;
+    this.title = _title;
+    this.comment = _comments;
+    this.url = _url;
   }
 
 }

@@ -1,9 +1,14 @@
+import { Product } from 'src/domain/products/product';
+
 export class UserCommand {
 
-  public name: string;
+  public title: string;
 
-  public cash: number;
+  public likes: number;
   
-  public inventary: []
+  public comment: Array<string>;
+
+  public url: string;
 
 }
+

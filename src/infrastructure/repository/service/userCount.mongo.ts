@@ -23,7 +23,11 @@ export class UserCountMongo implements RepositoryUserCount {
 
     async deleteUserInventory(id: string): Promise<any> {
       return await this.userCount.findByIdAndDelete(id);
-    } 
+    }
+
+    async putUserInventory(id: string, inventory: UserCount): Promise<any> {
+      return await this.userCount.findByIdAndUpdate(id, inventory, {new: true});
+    }
 
 
 }

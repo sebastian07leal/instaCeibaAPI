@@ -9,6 +9,7 @@ import { UserHandle } from './handle/userHandle';
 import { Listed } from './userCount/useCase/listed';
 import { AddInventory } from './userCount/useCase/addInventory';
 import { RemoveUser } from './userCount/useCase/removeUser';
+import { UpdateUser } from './userCount/useCase/updateUser';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { RemoveUser } from './userCount/useCase/removeUser';
     UserHandle,
     AddInventory,
     RemoveUser,
+    UpdateUser,
       {
           provide: 'UserCountMongo',
           useClass: UserCountMongo,
@@ -37,6 +39,7 @@ import { RemoveUser } from './userCount/useCase/removeUser';
     Listed,
     AddInventory,
     RemoveUser,
+    UpdateUser
   ]
 })
 export class AplicationModule {}
