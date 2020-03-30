@@ -1,15 +1,32 @@
 export class UserPost {
 
-  private title: string;
-  private likes: number;
-  private comment:  Array<string>;
-  private url: string
+  public title: string;
+  public likes: number;
+  public comment:  string;
+  public url: string
 
-  constructor(_likes: number, _title: string, _comments: Array<string>, _url: string) {
+  constructor(_likes: number, _title: string, _comments: string, _url: string) {
     this.likes = _likes;
     this.title = _title;
     this.comment = _comments;
     this.url = _url;
   }
+
+  getTitle(): string {
+    return this.title;
+  }
+
+  getLikes(): number {
+    return this.likes;
+  }
+
+  getCommnet(): string {
+    return this.comment;
+  }
+
+  getUrl(): string {
+    return this.url;
+  }
+  
 
 }

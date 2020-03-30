@@ -4,7 +4,7 @@ export class UserCommand {
 
   public likes: number;
   
-  public comment: Array<string>;
+  public comment: string;
 
   public url: string;
 
