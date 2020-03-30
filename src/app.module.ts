@@ -1,6 +1,4 @@
 import { Module, DynamicModule } from '@nestjs/common';
-
-import DomainModule from './domain/domain.module';
 import { AplicationModule } from './application/aplication.module';
 import InflastructureModule from './infrastructure/inflastructure.module';
 
@@ -11,7 +9,6 @@ export class AppModule {
     return {
       module: AppModule,
       imports: [
-        DomainModule,
         AplicationModule,
         InflastructureModule.foorRoot() 
       ],

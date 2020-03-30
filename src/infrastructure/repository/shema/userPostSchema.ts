@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-export const UserCountSchema = new Schema({
+export const UserPostSchema = new Schema({
   title: String,
   likes: Number,
   comment: Array,

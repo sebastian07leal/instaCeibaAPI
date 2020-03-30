@@ -1,5 +1,3 @@
-import { Product } from 'src/domain/products/product';
-
 export class UserCommand {
 
   public title: string;

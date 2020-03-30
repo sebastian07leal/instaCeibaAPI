@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { UserCountMongo } from './service/userCount.mongo';
+import { UserPostMongo } from './service/UserPost.mongo';
 
 @Module({
-  providers: [ UserCountMongo],
-  exports: [ UserCountMongo]
+  providers: [ UserPostMongo],
+  exports: [ UserPostMongo]
 })
 export class RepositoryModule {}

@@ -9,13 +9,13 @@ import {
   Res
 } from '@nestjs/common';
 import { UserCommand } from 'src/application/command/user.command';
-import { Listed } from 'src/application/userCount/useCase/listed';
-import { AddInventory } from 'src/application/userCount/useCase/addInventory';
-import { RemoveUser } from 'src/application/userCount/useCase/removeUser';
-import { UpdateUser } from 'src/application/userCount/useCase/updateUser';
+import { Listed } from 'src/application/userPost/useCase/listed';
+import { AddInventory } from 'src/application/userPost/useCase/addInventory';
+import { RemoveUser } from 'src/application/userPost/useCase/removeUser';
+import { UpdateUser } from 'src/application/userPost/useCase/updateUser';
 
 @Controller('usercount/')
-export class UserController {
+export class PostControler {
 
   constructor(
     private getAllUser: Listed,
@@ -45,10 +45,6 @@ export class UserController {
     @Param('idCount') idCount: string,
     @Body() inventory: UserCommand
      ): Promise<any> {
-
-    console.log(`CONTROLADOR ${inventory.title}`)
-    console.log(`CONTROLADOR ${inventory.likes}`)
-    console.log(`CONTROLADOR ${inventory.comment}`)
     return await this.updateUser.updateUserCount(idCount, inventory);
   }
 

@@ -1,11 +1,11 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { UserCountMongo } from 'src/infrastructure/repository/service/userCount.mongo';
+import { UserPostMongo } from 'src/infrastructure/repository/service/UserPost.mongo';
 
 @Injectable()
 export class Listed {
 
   constructor(
-    @Inject('UserCountMongo') private  repository: UserCountMongo
+    @Inject('UserCountMongo') private  repository: UserPostMongo
   ){}
 
   public async listedUser(): Promise<any> {

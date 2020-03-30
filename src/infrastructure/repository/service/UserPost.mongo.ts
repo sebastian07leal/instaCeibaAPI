@@ -1,22 +1,22 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { RepositoryUserCount } from 'src/domain/userCount/ports/repository.userCount';
-import { UserCount } from 'src/domain/userCount/userCount';
-import { UserCountEntity } from '../entity/userCount.entity';
+import { RepositoryUserPost } from 'src/domain/userPost/ports/repository.userPost';
+import { UserPost } from 'src/domain/userPost/userPost';
+import { UserPostEntity } from '../entity/userPost.entity';
 
 @Injectable()
-export class UserCountMongo implements RepositoryUserCount {
+export class UserPostMongo implements RepositoryUserPost {
 
   constructor(
-    @InjectModel('UserCount') private readonly userCount: Model<UserCountEntity>
+    @InjectModel('UserCount') private readonly userCount: Model<UserPostEntity>
   ){}
 
     async listedInventory(): Promise<any> {
       return this.userCount.find();
     }
 
-    async addToInventory( user: UserCount): Promise<any> {
+    async addToInventory( user: UserPost): Promise<any> {
       const producCreate = new this.userCount(user);
       return await producCreate.save();
     }
@@ -25,7 +25,7 @@ export class UserCountMongo implements RepositoryUserCount {
       return await this.userCount.findByIdAndDelete(id);
     }
 
-    async putUserInventory(id: string, inventory: UserCount): Promise<any> {
+    async putUserInventory(id: string, inventory: UserPost): Promise<any> {
       return await this.userCount.findByIdAndUpdate(id, inventory, {new: true});
     }
 

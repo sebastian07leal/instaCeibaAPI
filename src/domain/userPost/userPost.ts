@@ -1,6 +1,4 @@
-import { Product } from '../products/product';
-
-export class UserCount {
+export class UserPost {
 
   private title: string;
   private likes: number;

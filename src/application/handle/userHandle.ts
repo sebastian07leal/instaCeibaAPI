@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { UserCount } from 'src/domain/userCount/userCount';
+import { UserPost } from 'src/domain/userPost/userPost';
 import { UserCommand } from '../command/user.command';
 
 @Injectable()
 export class UserHandle {
 
-  public createProduct(productCommand: UserCommand): UserCount{
-    return new UserCount(
+  public createPost(productCommand: UserCommand): UserPost{
+    return new UserPost(
       productCommand.likes,
       productCommand.title,
       productCommand.comment,

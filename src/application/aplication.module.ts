@@ -1,23 +1,21 @@
 import { Module } from '@nestjs/common';
-import DomainModule from 'src/domain/domain.module';
 import { RepositoryModule } from 'src/infrastructure/repository/repository.module';
-import { UserCountMongo } from 'src/infrastructure/repository/service/userCount.mongo';
+import { UserPostMongo } from 'src/infrastructure/repository/service/UserPost.mongo';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserCountSchema } from '../infrastructure/repository/shema/userCountSchema';
+import { UserPostSchema } from '../infrastructure/repository/shema/userPostSchema';
 import { UserHandle } from './handle/userHandle';
 
-import { Listed } from './userCount/useCase/listed';
-import { AddInventory } from './userCount/useCase/addInventory';
-import { RemoveUser } from './userCount/useCase/removeUser';
-import { UpdateUser } from './userCount/useCase/updateUser';
+import { Listed } from './userPost/useCase/listed';
+import { AddInventory } from './userPost/useCase/addInventory';
+import { RemoveUser } from './userPost/useCase/removeUser';
+import { UpdateUser } from './userPost/useCase/updateUser';
 
 @Module({
   imports: [
-    DomainModule,
     MongooseModule.forFeature([
       {
         name: 'UserCount',
-        schema: UserCountSchema
+        schema: UserPostSchema
       }
     ])
   ],
@@ -30,7 +28,7 @@ import { UpdateUser } from './userCount/useCase/updateUser';
     UpdateUser,
       {
           provide: 'UserCountMongo',
-          useClass: UserCountMongo,
+          useClass: UserPostMongo,
       }
   ]
   ,
